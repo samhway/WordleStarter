@@ -1,17 +1,18 @@
-# File: Wordle.py
-​
-"""
-This module is the starter file for the Wordle assignment.
-BE SURE TO UPDATE THIS COMMENT WHEN YOU WRITE THE CODE.
-"""
-​
+# File: Wordle.p
+
+# Sam Holloway, Sierra Griffin, Adam Blackham, Madison Coffey, Glenn Livingston (Group 14)
+# Project 5
+# Last Updated: October 3, 2022
+# Create a project like wordle in python
+#
+
 import random
-​
+
 from WordleDictionary import FIVE_LETTER_WORDS
 from WordleGraphics import WordleGWindow, N_COLS, N_ROWS,CORRECT_COLOR,PRESENT_COLOR,MISSING_COLOR
-​
+
 def wordle():
-​
+
     
     def enter_action(s):
 # check to see if input string (s) is within the wordle dictionary (change to lower case for comparison) notify user if it is in the list or noth through the show_message function
@@ -43,8 +44,17 @@ def wordle():
 #loop through letters to input on first row of wordle screen
     for y, x in enumerate(keyLetters):
         gw.set_square_letter(0,y,x)
-​
+# check if user entered correct word
+    if keyLetters == keyword:
+# Congratulatory message
+        gw.show_message("Congrats, you guessed the WORDLE")
+    else: 
+# move onto next line if word not guess correctly ( set_current_row and get_current_row) 
+        gw.get_current_row()
+
+
+
 # Startup code
-​
+
 if __name__ == "__main__":
     wordle()
